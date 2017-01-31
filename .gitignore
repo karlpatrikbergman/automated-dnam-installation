@@ -45,3 +45,16 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+.gitignore
+.idea/
+README
+Vagrantfile
+ansible/
+files/
+scripts/
+!/scripts/bootstrap_ansible.sh
+!/scripts/
+!/files/
+!/ansible/
+!/Vagrantfile
+!/README
