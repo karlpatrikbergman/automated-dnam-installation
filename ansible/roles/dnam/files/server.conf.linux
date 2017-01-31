@@ -1,0 +1,100 @@
+# This is the TNM server system-wide configuration file.
+
+# The strategy used for options in the default configuration file shipped
+# with TNM is to specify options with their default value where
+# possible, but leave them commented.  Uncommented options change a
+# default value.
+# Available options is available in Server Administration Guide for TNM
+# IMPORTANT: Options must be intended using exactly four spaces, and not TAB
+
+common:
+    # Database host
+    #db.host: localhost
+
+    # TFTP server address to set in the nodes (used for configuration uploads).
+    #upload.server: 0.0.0.0
+
+tnmserver:
+    # Server name and description (displayed at login)
+    main.serverName: DNA-M Server
+    #main.serverDescription: DNA-M Server
+
+    # Server mode (normal/primary/secondary)
+    #main.serverMode: normal
+
+    # Listen on this address and port for SNMP traps. By default the trap
+    # receiver listens on all interfaces (0.0.0.0).
+    #main.trapaddress: 0.0.0.0/162
+
+    # Set this value to true if the TNM server should automatically
+    # update the nodes to send traps to the builtin SNMP trap receiver.
+    #main.neSetTrapaddress: true
+    # The SNMP trap address to set in the node.
+    # Typically this should be set to the TNM server's address.
+    # However if NAT is used between server and nodes, this value has to be
+    # adjusted accordingly.
+    #main.neTrapaddress: xxx.xxx.xxx.xxx/162
+
+    # Root directory of the builtin TFTP server
+    main.tftpRoot: /var/tnm/tftproot
+    #main.tftpPort: 69
+
+    # Northbound SNMP agent
+    #snmp.addr: 0.0.0.0
+    #snmp.port: 161
+
+    # Export directories
+    path.invsummary: /var/tnm/ftp/invsummary
+    path.circuitsummary: /var/tnm/ftp/circuitsummary
+    path.mib: /var/tnm/ftp/mib
+
+
+    images.background: /opt/transmode/tnm/images
+    #upload.eduConfigurationServer: 0.0.0.0
+    #server.command.start: service tnmserver start
+pmserver:
+    # PM export directories
+    path.pm15m: /var/tnm/ftp/pm15m
+    path.pm24h: /var/tnm/ftp/pm24h
+    path.pmsummary: /var/tnm/ftp/pmsummary
+
+
+
+
+
+webstart:
+    # Port on which the builtin webserver will serve webstart resources.
+    #webstart.port: 9000
+
+    # Hostname from which webstart resources are fetched.
+    # The default value is the hostname of the system.
+    # If a proxy webserver is used make sure to adjust this value accordingly.
+    webstart.host: 10.100.198.110
+
+    main.server.address: 10.100.198.110
+
+    # Allocated memory (Java heap size) for the webstarted client.
+    #client.heapsize: 1024m
+
+    # Path to documentation
+    webstart.doc.path: /opt/transmode/tnm/doc
+
+
+    # Default applications to use for opening CLI, ENM and User Guide in a WebStart Client on each OS
+    #cli.path.windows:
+    #web.path.windows:
+    #pdf.path.windows:
+
+    #cli.path.linux:
+    #web.path.linux:
+    #pdf.path.linux:
+
+    #cli.path.solaris:
+    #web.path.solaris:
+    #pdf.path.solaris:
+
+    #cli.path.osx:
+    #web.path.osx:
+    #pdf.path.osx:
+
+

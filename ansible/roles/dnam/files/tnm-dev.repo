@@ -1,0 +1,6 @@
+[tnm-dev]
+name=Transmode TNM
+baseurl=https://se-artif-prd.infinera.com/artifactory/yum-local/se.transmode.tnm/28.1.0/6/noarch
+gpgcheck=0
+enabled=1
+

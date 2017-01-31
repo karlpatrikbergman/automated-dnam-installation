@@ -1,0 +1,2 @@
+Installed plugin that caches all packages that are being use.
+$ vagrant plugin install vagrant-cachier

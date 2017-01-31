@@ -1,0 +1,47 @@
+- name: Install MariaDB
+  yum: pkg={{ item }}
+       state=present
+  with_items:
+    - mariadb
+    - mariadb-server
+    - MySQL-python
+
+- name: Start sql service and enable the service
+  service: name=mariadb
+           state=started
+           enabled=yes
+
+- name: Check if Mariadb is running
+  command: systemctl status mariadb
+  ignore_errors: yes
+  changed_when: false
+  register: service_mariadb_status
+
+- name: Report status of Mariadb
+  fail:
+    msg: |
+      Service mariadb is not running.
+      Output of `systemctl status mariadb`:
+      {{ service_mariadb_status.stdout }}
+      {{ service_mariadb_status.stderr }}
+  when: service_mariadb_status | failed
+
+- name: Set root user password
+  mysql_user: name=root
+              password="{{ mysql_root_password }}"
+              check_implicit_admin=yes
+              login_user="root"
+              login_password=""
+              state=present
+  ignore_errors: yes              
+
+  #- name: set the sql root password
+  #mysql_user: user=root
+  #            password={{ mysql_root_password }}
+  #            host=localhost
+
+- name: config for easy access as root user
+  template: src=/vagrant/files/my-cnf.j2
+            dest=/root/.my.cnf
+  when: service_mariadb_status
+

@@ -1,0 +1,16 @@
+- name: Install Erlang
+  yum:
+    name: http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
+    validate_certs: no
+    state: present
+
+- name: Install RabbigMQ
+  yum:
+    name: https://bintray.com/rabbitmq/rabbitmq-server-rpm/download_file?file_path=rabbitmq-server-3.6.6-1.el6.noarch.rpm
+    validate_certs: no
+    state: present
+
+- name: Start rabbitmq-server and enable the service
+  service: name=rabbitmq-server
+           state=started
+           enabled=yes

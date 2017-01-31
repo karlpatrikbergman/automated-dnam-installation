@@ -1,0 +1,26 @@
+Customer: Transmode Systems AB
+Contact: Erik Sjostrom
+License-signed: 2012-11-26       # The date when this license was signed
+TNM-RTU-BAS        # Base Server package
+TNM-BAS-BU        # Backup Server
+TNM-RTC-CLIENT        # Number of clients
+TNM-RTU-L1SA        # L1 Service Assurance
+TNM-RTU-L1SP        # L1 Service Provisioning
+TNM-RTU-L2SA        # L2 Service Assurance
+TNM-RTU-L2SP        # L2 Service Provisioning
+TNM-RTU-TC        # Transmission Control
+TNM-RTU-CC        # Channel Control
+TNM-RTU-SNMP        # Northbound SNMP
+TNM-RTU-WS-AL        # MTOSI Alarm export
+TNM-RTU-WS-L1INV        # MTOSI Inventory export
+TNM-RTU-WS-L1SA        # MTOSI Service activation
+TNM-RTU-WS-L1PM        # MTOSI L1 PM export
+TNM-RTU-WS-L2INV        # MTOSI L2 Inventory export
+TNM-RTU-WS-L2PM        # MTOSI L2 PM export
+TNM-MISC-NBFILES        # File based services export
+TNM-MISC-SCRIPT        # SNMP Script Tool
+TNDT-BASE        # TNDT Base
+TNDT-RESULT        # TNDT Results enabled
+TNDT-SAVE        # TNDT Save enabled
+TNDT-REPORT        # TNDT Reports enabled
+LicenseKey: b1e0d42aaf0c9a53a92da7b253d9e14a

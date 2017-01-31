@@ -1,0 +1,35 @@
+- name: Ensures /etc/tnm dir exists
+  file: path=/etc/tnm state=directory
+
+- name: Copy DNA-M files
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items: "{{ dnam_files }}"
+  tags: [docker]
+
+- name: Install DNA-M
+  yum:
+    name: "tnm*"
+    enablerepo: tnm-dev
+    validate_certs: no
+    state: present
+    update_cache: yes
+  tags:   
+    - debug
+
+- name: Remove repository from a specific repo file
+  yum_repository:
+    name: transmode
+    state: absent
+
+- name: Import file.sql similar to mysql -u <username> -p <password> < initDb.sql
+  mysql_db:
+    state: import
+    name: all
+    target: /opt/transmode/tnm/mainserver/scripts/initDb.sql
+
+- name: Start tnmserver service and enable the service
+  service: name=tnmserver
+           state=started
+           enabled=yes
