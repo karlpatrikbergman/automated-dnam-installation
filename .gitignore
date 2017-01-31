@@ -56,5 +56,3 @@ scripts/
 !/scripts/
 !/files/
 !/ansible/
-!/Vagrantfile
-!/README
