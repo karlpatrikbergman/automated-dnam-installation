@@ -1,0 +1,14 @@
+[centos-pabe]
+centos-pabe     ansible_connection=ssh      ansible_user=root
+
+[centos-pabe2]
+172.16.15.36     ansible_connection=ssh      ansible_user=root
+
+[prod]
+10.100.198.110  ansible_connection=ssh      ansible_user=root
+
+[pabe_test]
+172.16.15.9     ansible_connection=ssh      ansible_user=root
+
+[centos-dnam-install-test]
+172.16.15.213   ansible_connection=ssh      ansible_user=root

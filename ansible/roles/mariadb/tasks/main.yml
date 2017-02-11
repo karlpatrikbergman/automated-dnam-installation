@@ -1,30 +1,41 @@
+- name: Copy MariaDB files
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items: "{{ mariadb_files }}"
+  tags: [MariaDB]
+
 - name: Install MariaDB
   yum: pkg={{ item }}
        state=present
   with_items:
-    - mariadb
-    - mariadb-server
+    - MariaDB-server
+    - MariaDB-client
     - MySQL-python
+  tags: [MariaDB]
 
 - name: Start sql service and enable the service
   service: name=mariadb
            state=started
            enabled=yes
+  tags: [MariaDB]
 
 - name: Check if Mariadb is running
   command: systemctl status mariadb
   ignore_errors: yes
   changed_when: false
   register: service_mariadb_status
+  tags: [MariaDB]
 
 - name: Report status of Mariadb
   fail:
     msg: |
-      Service mariadb is not running.
+      Service mysql is not running.
       Output of `systemctl status mariadb`:
       {{ service_mariadb_status.stdout }}
       {{ service_mariadb_status.stderr }}
   when: service_mariadb_status | failed
+  tags: [MariaDB]
 
 - name: Set root user password
   mysql_user: name=root
@@ -33,15 +44,16 @@
               login_user="root"
               login_password=""
               state=present
-  ignore_errors: yes              
+  ignore_errors: yes
+  tags: [MariaDB]
 
   #- name: set the sql root password
   #mysql_user: user=root
   #            password={{ mysql_root_password }}
   #            host=localhost
 
-- name: config for easy access as root user
-  template: src=/vagrant/files/my-cnf.j2
-            dest=/root/.my.cnf
-  when: service_mariadb_status
-
+#- name: Config for easy access as root user
+#  template: src=/vagrant/files/my-cnf.j2
+#            dest=/root/.my.cnf
+#  when: service_mariadb_status
+#  tags: [MariaDB]

@@ -6,10 +6,6 @@ Vagrant.configure("2") do |config|
   config.vm.define "prod" do |d|
     d.vm.box = "centos/7"
     d.vm.network "private_network", ip: "10.100.198.110"
-    # d.vm.network :forwarded_port, guest: 9000, host: 9000
-    # d.vm.network :forwarded_port, guest: 1099, host: 1099
-    #d.vm.network :forwarded_port, guest: 8081, host: 8082
-    #d.vm.network :forwarded_port, guest: 80, host: 81
 
     d.vm.provision :shell, path: "scripts/bootstrap_ansible.sh"
     d.vm.provision :shell,

@@ -1,1 +1,6 @@
 mysql_root_password: root
+
+mariadb_files: [
+  { src: "MariaDB.repo", dest: "/etc/yum.repos.d/MariaDB.repo" },
+  { src: "my-cnf.j2", dest: "/root/.my.cnf"}
+]

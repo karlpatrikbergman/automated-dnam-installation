@@ -3,3 +3,8 @@ dnam_files: [
   { src: "tnm-dev.repo", dest: "/etc/yum.repos.d/tnm-dev.repo" },
   { src: "server.conf.linux", dest: "/etc/tnm/server.conf" }
 ]
+#dnam_files: [
+#  { src: "license.par", dest: "/etc/tnm/license.par" },
+#  { src: "tnm-dev.repo", dest: "/etc/yum.repos.d/tnm-dev.repo" },
+#  { src: "server.conf.linux", dest: "/etc/tnm/server.conf" }
+#]

@@ -52,26 +52,23 @@ tnmserver:
     images.background: /opt/transmode/tnm/images
     #upload.eduConfigurationServer: 0.0.0.0
     #server.command.start: service tnmserver start
+
 pmserver:
     # PM export directories
     path.pm15m: /var/tnm/ftp/pm15m
     path.pm24h: /var/tnm/ftp/pm24h
     path.pmsummary: /var/tnm/ftp/pmsummary
 
-
-
-
-
 webstart:
     # Port on which the builtin webserver will serve webstart resources.
-    #webstart.port: 9000
+    webstart.port: 9000
 
     # Hostname from which webstart resources are fetched.
     # The default value is the hostname of the system.
     # If a proxy webserver is used make sure to adjust this value accordingly.
-    webstart.host: 10.100.198.110
+    webstart.host: 172.16.15.213
 
-    main.server.address: 10.100.198.110
+    main.server.address: 172.16.15.213
 
     # Allocated memory (Java heap size) for the webstarted client.
     #client.heapsize: 1024m

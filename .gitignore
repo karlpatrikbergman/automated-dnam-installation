@@ -54,5 +54,11 @@ files/
 scripts/
 !/scripts/bootstrap_ansible.sh
 !/scripts/
-!/files/
+!/files_delete_me/
 !/ansible/
+!/files/
+ansible/prod.retry
+ansible/roles/rabbitmq/default/
+ansible/roles/setup/defaults/
+!/Vagrantfile
+!/README
