@@ -54,7 +54,7 @@ files/
 scripts/
 !/scripts/bootstrap_ansible.sh
 !/scripts/
-!/files_delete_me/
+!/files_delete_when_certain/
 !/ansible/
 !/files/
 ansible/prod.retry
@@ -62,3 +62,7 @@ ansible/roles/rabbitmq/default/
 ansible/roles/setup/defaults/
 !/Vagrantfile
 !/README
+!/ansible/roles/dnam/files/
+!/ansible/roles/dnam/files/server.conf.linux
+!/ansible/roles/dnam/files/license.par
+!/ansible/roles/dnam/files/tnm-dev.repo

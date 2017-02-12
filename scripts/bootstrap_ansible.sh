@@ -1,6 +1,11 @@
 #!/bin/bash
 
-set -e
+# This file is only used with Vagrant, not with libvirt
+
+set -o nounset                                                                  # Treat unset variables as an error
+export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'    # Log
+set -x                                                                          # Log
+set -e                                                                          # Quit on error
 
 echo "Installing Ansible..."
 sudo yum -y install epel-release

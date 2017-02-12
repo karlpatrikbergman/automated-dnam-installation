@@ -1,9 +1,9 @@
-- hosts: centos-dnam-install-test
-  remote_user: vagrant
+- hosts: all
+  remote_user: root
   sudo: yes
   roles:
     - java
     - mariadb
     - dnam
-    - rabbitmq
-    - setup
+#    - rabbitmq
+#    - setup

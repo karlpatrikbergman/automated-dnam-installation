@@ -1,11 +1,26 @@
 - name: Ensures /etc/tnm dir exists
   file: path=/etc/tnm state=directory
+  tags: [dnam]
 
 - name: Copy DNA-M files
   copy:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items: "{{ dnam_files }}"
+  tags: [dnam]
+
+- name: Configure dna-m webstart page
+  replace: "dest=/etc/tnm/server.conf
+          regexp='# webstart.host:'
+          replace='webstart.host: {{ host }}'
+          backup=yes"
+  tags: [dnam]
+
+- name: Configure dna-m webstart page
+  replace: "dest=/etc/tnm/server.conf
+          regexp='# main.server.address:'
+          replace='main.server.address: {{ host }}'
+          backup=yes"
   tags: [dnam]
 
 - name: Install DNA-M
@@ -30,8 +45,11 @@
     target: /opt/transmode/tnm/mainserver/scripts/initDb.sql
   tags: [dnam]
 
-- name: Start tnmserver service and enable the service
-  service: name=tnmserver
-           state=started
-           enabled=yes
-  tags: [dnam]
+- name: Start tnmserver service
+  systemd: state=started name=tnmserver
+
+#- name: Start tnmserver service and enable the service
+#  service: name=tnmserver
+#           state=started
+#           enabled=yes
+#  tags: [dnam]

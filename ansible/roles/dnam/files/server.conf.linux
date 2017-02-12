@@ -66,9 +66,9 @@ webstart:
     # Hostname from which webstart resources are fetched.
     # The default value is the hostname of the system.
     # If a proxy webserver is used make sure to adjust this value accordingly.
-    webstart.host: 172.16.15.213
+    # webstart.host:
 
-    main.server.address: 172.16.15.213
+    # main.server.address:
 
     # Allocated memory (Java heap size) for the webstarted client.
     #client.heapsize: 1024m
