@@ -26,6 +26,7 @@ sleep 10
 INSTALL_HOST_IP="$(get_domain_ip_address ${CONNECTION} ${DOMAIN} 172.16.15.0/24 br0)"
 echo "${INSTALL_HOST_IP}"
 
+# TODO: What is default directory for a project like this?
 export ANSIBLE_CONFIG=ansible/ansible.cfg
 
 # Write vm ip number to ansible hosts file

@@ -1,3 +1,3 @@
-- name: Execute rabbitmq setup script
-  command: sh /opt/transmode/tnm/mainserver/scripts/setup_rabbitmq.sh
-
+#- name: Execute rabbitmq setup script
+#  command: sh /opt/transmode/tnm/mainserver/scripts/setup_rabbitmq.sh
+#

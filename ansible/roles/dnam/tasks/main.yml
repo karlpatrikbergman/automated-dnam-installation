@@ -47,9 +47,3 @@
 
 - name: Start tnmserver service
   systemd: state=started name=tnmserver
-
-#- name: Start tnmserver service and enable the service
-#  service: name=tnmserver
-#           state=started
-#           enabled=yes
-#  tags: [dnam]

@@ -10,7 +10,15 @@
     validate_certs: no
     state: present
 
-- name: Start rabbitmq-server and enable the service
-  service: name=rabbitmq-server
-           state=started
-           enabled=yes
+- name: Execute rabbitmq setup script
+  command: sh /opt/transmode/tnm/mainserver/scripts/setup_rabbitmq.sh
+
+
+
+#- name: Start tnmserver service
+#  systemd: state=started name=rabbitmq-server
+
+#- name: Start rabbitmq-server and enable the service
+#  service: name=rabbitmq-server
+#           state=started
+#           enabled=yes

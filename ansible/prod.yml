@@ -1,9 +1,13 @@
 - hosts: all
   remote_user: root
   sudo: yes
+  vars:
+    env: dev
+    hostname: dev-web-*
   roles:
+    - common
     - java
     - mariadb
     - dnam
-#    - rabbitmq
-#    - setup
+    - rabbitmq
+

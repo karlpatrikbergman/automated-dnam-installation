@@ -1,2 +1,2 @@
 [prod]
-172.16.15.203  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_pass=transmode
+172.16.15.139  ansible_connection=ssh ansible_ssh_user=root ansible_ssh_pass=transmode

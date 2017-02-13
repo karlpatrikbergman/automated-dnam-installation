@@ -1,0 +1,11 @@
+# set the friendly hostname from the playbook variable
+- name: set hostname
+  hostname: name={{ hostname.replace('*', ansible_all_ipv4_addresses[0].split('.')[3]) }}
+
+# add the new hostname to the hosts file
+- name: add to hosts
+  lineinfile: >
+    dest=/etc/hosts
+    regexp='^127\.0\.0\.1'
+    line='127.0.0.1 localhost {{ hostname.replace("*", ansible_all_ipv4_addresses[0].split(".")[3]) }}'
+    state=present
