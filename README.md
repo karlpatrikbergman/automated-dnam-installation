@@ -10,7 +10,7 @@ In root directory run:
 This command will:  
 - Create a new libvirt domain (=vm) on tnm-vm7 with CentOS 7. No java and such pre-installed.  
 - Get the domain ip address using virtual mac address and arp-scan  
-- Run ansible-playbook that installs configures hostname, installs     
+- Run ansible-playbook that configures hostname of vm and installs:     
   - Java 8 SDK
   - MariaDB
   - DNA-M
