@@ -20,7 +20,7 @@ This command will:
 After installation the webstart page should be reachable on  
 http://assigned-ip-address:9000  
 
-## Clean up
+### Clean up
 To delete the vm, in project root directory run:
 ```shell
 ./scripts/delete_domain.sh <your-vm-name>
