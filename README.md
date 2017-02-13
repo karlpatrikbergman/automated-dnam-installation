@@ -18,7 +18,7 @@ This command will:
   - RabbitMQ  
   
 After installation the webstart page should be reachable on  
-http://assigned-ip-address:9000  
+<assigned-ip-address>:9000  
 
 ## How to run automatic DNA-M installation on local host
 At the moment this is implemented with Vagrant. There are still some issues here though that needs to be
