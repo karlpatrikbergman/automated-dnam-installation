@@ -2,7 +2,7 @@
 ## Prerequisites
 libvirt package  
 arp-scan package
-## How to run automatic DNA-M installation on remove VM
+## How to run automatic DNA-M installation on remote VM
 In project root directory run:
 ```shell
 ./dnam_automatic_install.sh <some-vm-name>
